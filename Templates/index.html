@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> VENUPAS </title>
+</head>
+<body>
+    <h1>🛍️ Venupas Roupas</h1>
+    <a href="{{ url_for('adicionar') }}">+ Adicionar Produto</a>
+    <hr>
+    {% for p in produtos %}
+        <div>
+            <h3><a href="{{ url_for('produto', id=p.id) }}">{{ p.nome }}</a></h3>
+            <p>R$ {{ p.preco }}</p>
+            {% if p.imagem %}
+                <img src="{{ p.imagem }}" width="150">
+            {% endif %}
+        </div>
+        <hr>
+    {% else %}
+        <p>Nenhum produto cadastrado ainda 😅</p>
+    {% endfor %}
+</body>
+</html>

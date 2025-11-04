@@ -4,10 +4,11 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
-app.secret_key = "segredo_enjoei"
+app.secret_key = "segredo_Venupas"
 
 # Lista simulando o banco de dados
 produtos = []
+
 
 
 @app.route('/')
