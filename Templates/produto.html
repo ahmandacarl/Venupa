@@ -1,1 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ produto.nome }}</title>
+</head>
+<body>
+    <h1>{{ produto.nome }}</h1>
+    <p>Preço: R$ {{ produto.preco }}</p>
+    <p>{{ produto.descricao }}</p>
+    {% if produto.imagem %}
+        <img src="{{ url_for('static', filename='uploads/' + produto.imagem.split('/')[-1]) }}" width="250">
+    {% endif %}
+    <br><br>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
 
